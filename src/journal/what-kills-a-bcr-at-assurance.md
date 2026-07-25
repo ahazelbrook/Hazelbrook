@@ -3,10 +3,10 @@ title: "What kills a BCR at assurance"
 description: "The assumptions that fail an assurance review, in the order they fail, and why a weak base case rather than a weak option is what usually kills a case."
 slug: "what-kills-a-bcr-at-assurance"
 date: "2026-07-25"
-standfirst: "Business cases rarely fail on arithmetic — they fail on a counterfactual nobody stress-tested, a forecast nobody interrogated, and an option set that was never a real choice."
+standfirst: "The counterfactual, the demand forecast and the option shortlist. Three inputs, and the reason most cases come back from gate."
 ---
 
-Business cases do not usually fail an assurance review on arithmetic. They fail, in roughly this order, on: a base case that quietly assumes the world stands still; a demand forecast that has been accepted rather than interrogated; an option shortlist that is the preferred option in three sizes; a discount rate treated as one number instead of a range; a residual value doing more work at the boundary than anyone intended; and a benefit–cost ratio presented as the answer rather than one line of it.
+Business cases do not fail an assurance review on arithmetic. They fail on the base case first, the demand forecast second, and the option shortlist third. The discount rate, the residual value and the benefit–cost ratio itself account for most of what is left, and each of those is usually a symptom of one of the first three.
 
 What follows is what a reviewer does with each of those, and why the first is the one that ends cases.
 
@@ -22,17 +22,17 @@ There are two directions of error. The first, and by far the more common, is a b
 
 The second is over-specification in the other direction, where a "planning reference case" is assumed to happen anyway even though nothing would fund it. That understates the project, and it fails scrutiny just as hard, because it is equally unevidenced.
 
-Infrastructure Australia's own commissioned [2022 review of its cost–benefit analysis methodology](https://www.infrastructureaustralia.gov.au/sites/default/files/2022-03/2022%20CBA%20methodology%20review.pdf) recommended revising the base case definition toward a business-as-usual framing, on the grounds that the existing wording could be read as permitting a committed-and-funded approach where a planning reference case was the right answer. When the agency that assesses the cases asks for its own base case guidance to be tightened, the failure mode is structural rather than local.
+Infrastructure Australia's own commissioned [2022 review of its cost–benefit analysis methodology](https://www.infrastructureaustralia.gov.au/sites/default/files/2022-03/2022%20CBA%20methodology%20review.pdf) recommended revising the base case definition toward a business-as-usual framing, on the grounds that the existing wording could be read as permitting a committed-and-funded approach where a planning reference case was the right answer. When the agency that assesses the cases asks for its own base case guidance to be tightened, the failure mode is structural, not local.
 
 The reason a weak base case is fatal where a weak option is merely expensive is timing. A weak option can be fixed inside the case — add an option, re-run it, re-present. Reopening the base case reopens every benefit line in the model, because every benefit was measured against it. Query it at gate and the honest remedy is a re-run, not an amendment, and a re-run is a schedule the sponsor no longer has.
 
-**What a reviewer looks for.** The capital and maintenance profile in the base case, line by line, and whether it is evidenced or asserted. Whether any committed and funded project appears in both futures. Whether assets are assumed to degrade, and on what evidence. And whether the same population, land use and demand assumptions have been applied to both — a base case built on last year's inputs against an option built on this year's produces a benefit that is entirely an artefact of the mismatch.
+**What we look for.** The capital and maintenance profile in the base case, line by line, and whether it is evidenced or asserted. Whether any committed and funded project appears in both futures. Whether assets are assumed to degrade, and on what evidence. And whether the same population, land use and demand assumptions have been applied to both — a base case built on last year's inputs against an option built on this year's produces a benefit that is entirely an artefact of the mismatch.
 
 ## Is the demand forecast evidence, or the answer working backwards?
 
 Demand sits underneath almost every benefit line. Travel time savings, vehicle operating costs, reliability, safety, the wider economic benefits — all of them are volumetric. Move the forecast and everything above it moves, which is why it is the second thing a reviewer opens and the first thing a sponsor defends.
 
-It fails scrutiny not because forecasting is hard, although it is, but because the error is systematic and asymmetric rather than random — which places the cause in the process rather than in the mathematics. We have written about that separately in [why patronage forecasts miss](/journal/why-patronage-forecasts-miss/). A case can be immaculate in every other respect and still be carrying a forecast that will not survive its first year of operation.
+It fails scrutiny not because forecasting is hard, although it is, but because the error is systematic and asymmetric, which places the cause in the process and not in the mathematics. We have written about that separately in [why patronage forecasts miss](/journal/why-patronage-forecasts-miss/). A case can be immaculate in every other respect and still be carrying a forecast that will not survive its first year of operation.
 
 **What a reviewer looks for.** The ramp-up profile and what evidence supports it. Whether the land use the forecast assumes is itself committed, or is a rezoning that has not happened. Whether the same forecast drives the economic case and the revenue case, and if not, why two numbers exist. And who produced it, inside what process, with what visibility of the answer that process wanted.
 
@@ -40,7 +40,7 @@ It fails scrutiny not because forecasting is hard, although it is, but because t
 
 Infrastructure Australia's [Assessment Framework](https://www.infrastructureaustralia.gov.au/publications/assessment-framework) recommends — recommends, rather than requires — at least two options plus a base case in a business case. That is a minimum, and a minimum read as a target is how a shortlist becomes the preferred option at three different scopes.
 
-The audit record is blunt about how common this is. The Victorian Auditor-General's 2022 report on the [quality of major transport infrastructure project business cases](https://www.audit.vic.gov.au/report/quality-major-transport-infrastructure-project-business-cases) found that three of the four cases examined lacked sufficient analysis of alternative options, two lacked an assessment of value for money under different scenarios, and three did not support fully informed investment decisions. Three were not finalised until after significant financial commitments had been made.
+The audit record is blunt about how common this is. The Victorian Auditor-General's 2022 report on the [quality of major transport infrastructure project business cases](https://www.audit.vic.gov.au/report/quality-major-transport-infrastructure-project-business-cases) found that three of the four cases examined lacked sufficient analysis of alternative options, and that three were not finalised until after significant financial commitments had been made.
 
 That last finding explains the first. A thin option set is usually a sequencing symptom rather than an analytical failure: if the commitment precedes the case, there is no genuine alternative left to analyse, and every reviewer recognises the shape of a shortlist assembled after the fact. Nobody involved is being dishonest. They are being asked to evidence a decision rather than inform one, which is a different job with the same deliverable.
 
@@ -48,7 +48,7 @@ That last finding explains the first. A thin option set is usually a sequencing 
 
 ## A discount rate is a convention. The appraisal period is a choice.
 
-The Commonwealth convention is a 7% real central rate, with results also presented at 4% and 10% so the sensitivity is visible in the summary rather than buried. That is the position in Infrastructure Australia's [Guide to economic appraisal](https://www.infrastructureaustralia.gov.au/sites/default/files/2021-07/Assessment%20Framework%202021%20Guide%20to%20economic%20appraisal.pdf) and in the [ATAP cost–benefit analysis guidance](https://www.atap.gov.au/sites/default/files/documents/ATAP-T2-CBA-FINAL-2022-04-26.pdf).
+The Commonwealth convention is a 7% real central rate, with results also presented at 4% and 10% so the sensitivity is visible in the summary instead of buried. That is the position in Infrastructure Australia's [Guide to economic appraisal](https://www.infrastructureaustralia.gov.au/sites/default/files/2021-07/Assessment%20Framework%202021%20Guide%20to%20economic%20appraisal.pdf) and in the [ATAP cost–benefit analysis guidance](https://www.atap.gov.au/sites/default/files/documents/ATAP-T2-CBA-FINAL-2022-04-26.pdf).
 
 It is not the only convention in the country. NSW Treasury's [TPG23-08 Guide to Cost-Benefit Analysis](https://www.nsw.gov.au/departments-and-agencies/nsw-treasury/documents-library/tpg23-08) sets a central real rate of 5%, the first Australian jurisdiction to move to it. Two consequences follow. A BCR is not portable between jurisdictions, so putting one project's ratio next to another's without naming the convention behind each is not a comparison. And a case whose recommendation changes between its own sensitivity bookends is not necessarily wrong — but it has become a case about the discount rate, and that belongs in the narrative rather than in an appendix table.
 
@@ -58,19 +58,21 @@ It is not the only convention in the country. NSW Treasury's [TPG23-08 Guide to 
 
 ATAP sets the appraisal period at the expected life of the asset in its intended use, plus construction — conventionally around 30 years for road initiatives and 50 for rail. Where a jurisdiction caps the period below asset life, typically at 30 years, a residual value is added for the net benefits beyond the boundary.
 
-Residual value is legitimate and necessary. It fails scrutiny when it is doing real work. It is commonly derived by straight-line depreciation against remaining service life, which makes it a bookkeeping construct rather than a demand-based benefit — and a case carried across the line by a depreciated capital figure landing in year 30 is a case about accounting policy.
+Residual value is legitimate and necessary. It fails scrutiny when it is doing real work. It is commonly derived by straight-line depreciation against remaining service life, which makes it a bookkeeping construct, not a demand-based benefit — and a case carried across the line by a depreciated capital figure landing in year 30 is a case about accounting policy.
 
 **What a reviewer looks for.** Residual value as a percentage of the present value of total benefits, and the BCR re-run with it removed. If the ratio crosses 1.0 when it comes out, that is a finding, and it is better found by you than at gate.
 
-## The BCR is one line of the assessment, not the assessment
+## Where the BCR sits in the assessment
 
 Infrastructure Australia's 2021 framework asks proponents to demonstrate merit using quantitative *and* qualitative evidence against its assessment criteria, with the economic appraisal sitting inside an integrated view rather than standing in for it. The BCR is an input to a judgement. It is not the judgement.
 
-Where a case treats it as a score to be maximised, a familiar set of behaviours follows. Benefits that resist monetisation drift into the strategic chapter, where they carry no weight. Costs migrate to enabling works just outside the assessment boundary. Sensitivity ranges narrow. None of that requires bad faith; it is what optimising a single number looks like from the inside, and it is legible from the outside within about an hour. A BCR of 1.1 that has survived its own sensitivity tests is a stronger case than a 2.4 that has never been asked to.
+Where a case treats it as a score to be maximised, a familiar set of behaviours follows. Benefits that resist monetisation drift into the strategic chapter, where they carry no weight. Costs migrate to enabling works just outside the assessment boundary. Sensitivity ranges narrow. None of that requires bad faith; it is what optimising a single number looks like from the inside, and it is perfectly legible from the outside. A BCR of 1.1 that has survived its own sensitivity tests is a stronger case than a 2.4 that has never been asked to.
+
+The same test runs on the other side of the table. A lender’s technical adviser and an equity sponsor’s diligence team open the case in the same order, for the opposite reason.
 
 ## What a reviewer looks at first
 
-In order, and before the model is opened at all:
+This is the work — [business case, appraisal and independent review](/#services) of a case someone else has built. In order, and before the model is opened at all:
 
 1. **The base case** — its capital and maintenance profile, and whether anything committed and funded sits in both futures.
 2. **The demand forecast** — where it came from, and whether the economic case and the revenue case are running the same one.
@@ -79,5 +81,3 @@ In order, and before the model is opened at all:
 5. **Residual value** — as a share of the present value of benefits, and the result without it.
 
 None of this is about catching anyone out. Every item on that list can be tested by the team writing the case, weeks before anyone else asks, and most of them take an afternoon. The cases that survive assurance are rarely the ones with the highest ratio. They are the ones where somebody asked these questions early enough that the answers could still change the case.
-
-That is the work: [business case, appraisal and independent review](/#services) of a case someone else has built.

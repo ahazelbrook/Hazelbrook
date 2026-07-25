@@ -379,9 +379,26 @@
     margin-block-start: var(--hb-space-6, 32px);
   }
 
+  /* Astryx's reset strips list-style from every ol/ul, which is right for the
+     app's navigation and record lists and wrong for running prose — a numbered
+     list of questions whose numbers do not render is no longer a numbered list,
+     and the copy refers back to it by position. Markers are restored here, and
+     only inside an article. */
   .hb-article ul,
   .hb-article ol {
-    padding-inline-start: var(--hb-space-5, 24px);
+    padding-inline-start: var(--hb-space-6, 32px);
+  }
+
+  .hb-article ol {
+    list-style: decimal;
+  }
+
+  .hb-article ul {
+    list-style: disc;
+  }
+
+  .hb-article li::marker {
+    color: var(--hb-accent-deep);
   }
 
   .hb-article li + li {

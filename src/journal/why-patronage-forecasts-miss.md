@@ -3,7 +3,7 @@ title: "Why patronage forecasts miss high"
 description: "Toll road traffic averages 77% of forecast in year one and barely improves by year five. The error is structural, not incompetence — here is the mechanism."
 slug: "why-patronage-forecasts-miss"
 date: "2026-07-25"
-standfirst: "Forecasts miss high far more often than they miss low — and the questions that expose why are commercial ones, not modelling ones."
+standfirst: "Forecasts miss high, and they keep missing high. The reasons sit in how a forecast is commissioned and what it has to carry."
 ---
 
 Patronage and traffic forecasts miss high, and they miss high consistently. Across more than 100 privately financed toll roads, bridges and tunnels, actual traffic in the first year of operation averaged about 77% of forecast — roughly 23% below — and the gap barely narrows in the years that follow ([Transportation, 2009](https://link.springer.com/article/10.1007/s11116-009-9199-7)). That is not scatter. Random error misses low as often as high. A one-directional error has a cause, and the cause is structural: it sits in how the forecast is built, what it has to answer, and the decision it feeds. The mechanism is knowable, which means the next forecast you are handed can be interrogated rather than believed.
@@ -12,13 +12,11 @@ Patronage and traffic forecasts miss high, and they miss high consistently. Acro
 
 The toll road evidence is the cleanest, because tolled assets are financed against their own traffic and somebody therefore counts. Earlier reviews of the same body of projects put opening-year traffic 20–30% below forecast. The later work put the mean ratio of actual to forecast at 0.77 in the first year — and found it still sitting near 0.79 several years into operation.
 
-> 77% of forecast in year one, and around 79% years later. Whatever is wrong is not a start-up effect.
+> A forecast that misses in both directions is uncertainty. A forecast that misses in one direction is a description of the process that produced it.
 
 Widen the sample beyond tolled assets and the asymmetry sharpens rather than softens. A study of 210 transport projects across 14 nations found rail passenger forecasts overestimated in nine cases out of ten, by an average of 106%, while road traffic came in about 9.5% *above* forecast on average — with half of road projects out by more than ±20% in one direction or the other ([Journal of the American Planning Association, 2005](https://www.tandfonline.com/doi/abs/10.1080/01944360508976688)). The same work found no improvement in accuracy across three decades of technique.
 
 Read those two results together and the pattern is not about modelling skill. Untolled roads, where traffic turns up whether or not anyone predicted it and no revenue depends on the number, under-forecast. Tolled roads and new rail, where the forecast has to carry a large discretionary capital commitment or a debt schedule, over-forecast. The Australian record follows the international one: the survey of this country's toll network in [Transport Reviews](https://www.tandfonline.com/doi/abs/10.1080/01441640903211173) found a sizeable and one-sided gap between forecast and actual, most pronounced in the first year of operation.
-
-A forecast that misses in both directions is uncertainty. A forecast that misses in one direction is a description of the process that produced it.
 
 ## Why does a toll make the forecast harder?
 
@@ -36,11 +34,11 @@ The curve is where an uncomfortable opening number goes to be forgiven rather th
 
 ## What the Cross City Tunnel gap actually measures
 
-Sydney's Cross City Tunnel is the Australian case everybody reaches for. It opened in August 2005 against forecasts in the order of 90,000 vehicles a day and carried roughly 30,000 — about a third ([World Bank PPP Knowledge Lab](https://ppp.worldbank.org/public-private-partnership/transportation/cross-city-tunnel-sidney-australia)). The project was reviewed by the [NSW Auditor-General](https://www.audit.nsw.gov.au/our-work/reports/the-cross-city-tunnel-project) the following year.
+Sydney's Cross City Tunnel is the Australian case everybody reaches for. It opened in August 2005 against forecasts in the order of 90,000 vehicles a day and carried roughly 30,000 — about a third ([World Bank PPP Knowledge Lab](https://ppp.worldbank.org/transportation/cross-city-tunnel-sidney-australia)). The project was reviewed by the [NSW Auditor-General](https://www.audit.nsw.gov.au/our-work/reports/the-cross-city-tunnel-project) the following year.
 
 The size of the gap is the least interesting thing about it. What matters is what the gap was made of, because each component is ordinary and each recurs.
 
-First, the geometry. A short cross-city tunnel saves a modest number of minutes, and the toll per kilometre was high relative to that saving. When the time saved is small, almost none of the demand answer comes from the network model and almost all of it comes from the willingness-to-pay parameter. The forecast was, in substance, a single elasticity wearing a traffic model as a coat.
+First, the geometry. A short cross-city tunnel saves a modest number of minutes, and the toll per kilometre was high relative to that saving. When the time saved is small, almost none of the demand answer comes from the network model and almost all of it comes from the willingness-to-pay parameter. In substance the forecast was a willingness-to-pay estimate, with a network model around it doing very little of the work.
 
 Second, the surrounding network. The forecast assumed a set of surface road changes that made the free alternative slower. Those changes sat outside the concession, were contested publicly, and were partly unwound. The forecast was accurate about a network that did not end up operating.
 
@@ -52,7 +50,9 @@ None of this is a claim about anybody's honesty. Optimism bias is a named, docum
 
 It survives despite being named because it is produced by process rather than by character. A forecast is commissioned inside a program that has already decided the project is worth investigating. Scrutiny then falls unevenly: a number that supports proceeding is accepted and filed, while a number that does not is sent back for another look — more segments, a revised catchment, a different assumption about the competing route. Every individual iteration is defensible. Run the loop three times and the surviving number is biased anyway, and nobody in the chain did anything they would be embarrassed to describe.
 
-This is why a forecast should be built so it can be taken apart line by line rather than defended whole, which is the whole of what we do in [demand and network evidence](/#services). It is also why the forecast is the first thing worth testing downstream: patronage is the input a benefit–cost ratio rests on, and if demand comes in 20% low, most of the benefit stream moves with it and a marginal case stops being a case at all. That is why demand assumptions sit near the top of the list of [what kills a BCR at assurance](/journal/what-kills-a-bcr-at-assurance/).
+So we build a forecast to be taken apart line by line rather than defended whole, which is most of what [demand and network evidence](/#services) actually involves.
+
+The forecast is also the first thing worth testing downstream. Patronage is the input a benefit–cost ratio rests on: if demand comes in 20% low, most of the benefit stream moves with it and a marginal case stops being a case. Demand assumptions sit near the top of the list of [what kills a BCR at assurance](/journal/what-kills-a-bcr-at-assurance/).
 
 ## Questions to ask of the next forecast you are handed
 
@@ -66,6 +66,6 @@ None of these need a model, and none of them require you to be a modeller. They 
 6. **Whose land use projections are these, and what vintage?** Population and employment forecasts age badly, and a five-year-old catchment assumption can be the largest single error in the model.
 7. **What was the first number?** Ask what changed between draft and final, and why. The direction of the revisions tells you more than the final figure does.
 8. **Has this forecaster's previous work been checked against outturn?** Not as a character test — as calibration. A forecaster who can show you their last five projects against actuals is giving you something no sensitivity table can.
-9. **What does the economic case look like at 80% of forecast demand?** If the answer has not been calculated, the case has not been tested.
+9. **What does the case look like at 80% of forecast demand?** The economic case if you are appraising it, the debt service cover if you are financing it. If neither has been calculated, the forecast has not been tested.
 
-A forecast is not a prediction to be believed or disbelieved. It is an argument with a structure, and every one of the questions above is a way of asking which part of that structure is load-bearing.
+A forecast is an argument with a structure. Every one of the questions above is a way of asking which part of that structure is load-bearing.
