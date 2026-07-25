@@ -1,10 +1,11 @@
 /**
  * Services — four practice areas, each carrying its accent from the spectrum.
  *
- * The brand deck assigns a meaning to every accent (Vapor is grid and
- * engineering, Glow is generation and yield, Dusk is policy and the long view,
- * Tide is transition and growth), so each row switches accent via the
- * data-hb-accent attribute rather than hard-coding a colour. Colour arrives
+ * The brand deck assigns a meaning to every accent — read here for general
+ * infrastructure rather than for energy: Dusk is the long view, Vapor is the
+ * network, Glow is yield, Tide is capital in motion. Each row switches accent
+ * via the data-hb-accent attribute rather than hard-coding a colour. Colour
+ * arrives
  * small — a rule and a dot, never a filled panel. "Bright is a guest, never
  * the host."
  *
@@ -15,7 +16,7 @@
 
 import { HStack, VStack } from '@astryxdesign/core/Layout';
 import { Text } from '@astryxdesign/core/Text';
-import { services } from '../content';
+import { services, servicesSection } from '../content';
 
 export function Services() {
   return (
@@ -23,10 +24,8 @@ export function Services() {
       <div className="hb-container">
         <VStack gap={8}>
           <VStack gap={5}>
-            <p className="hb-label">What we do</p>
-            <h2 className="hb-display hb-display--l">
-              Four questions that decide a project
-            </h2>
+            <p className="hb-label">{servicesSection.label}</p>
+            <h2 className="hb-display hb-display--l">{servicesSection.heading}</h2>
           </VStack>
 
           <ul className="hb-services">

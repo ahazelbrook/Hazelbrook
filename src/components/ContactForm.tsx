@@ -137,7 +137,7 @@ export function ContactForm() {
               </VStack>
 
               <VStack gap={2}>
-                <p className="hb-label">London</p>
+                <p className="hb-label">{contact.city}</p>
                 <VStack gap={0}>
                   {contact.address.map(line => (
                     <Text key={line} type="body" as="p" color="secondary">
@@ -216,7 +216,7 @@ export function ContactForm() {
 
               <TextArea
                 label="Your note"
-                placeholder="What are you building, and where has it got to?"
+                placeholder="What are you working on, and where has it got to?"
                 value={message}
                 onChange={setMessage}
                 rows={5}
