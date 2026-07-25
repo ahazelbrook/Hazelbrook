@@ -32,7 +32,10 @@ export function Mission() {
 
           <hr className="hb-rule" />
 
-          <Grid columns={{ minWidth: 200 }} gap={6} width="100%">
+          {/* 320, not 200: the figures are set at 4.125rem in the display face,
+              and "$30bn+" is wider than a 200px track — at the old minimum it
+              overflowed its column and collided with the figure beside it. */}
+          <Grid columns={{ minWidth: 320 }} gap={6} width="100%">
             {mission.figures.map(figure => (
               <VStack key={figure.caption} gap={3}>
                 <p className="hb-figure">{figure.value}</p>

@@ -4,7 +4,8 @@
  * Kept deliberately short. The brand's own promise is that "a short note is
  * enough to start", so the form asks for five things and no more: no budget
  * bands, no timeline pickers, no "how did you hear about us". A consultancy
- * that qualifies leads with a dropdown does not read as independent counsel.
+ * that qualifies leads with a dropdown does not read as a practice worth
+ * writing to.
  *
  * Submission posts JSON to FORM_ENDPOINT (Formspree and its equivalents all
  * accept this shape). Until that endpoint is configured the form stays in
@@ -137,13 +138,14 @@ export function ContactForm() {
               </VStack>
 
               <VStack gap={2}>
-                <p className="hb-label">London</p>
+                <p className="hb-label">Based</p>
                 <VStack gap={0}>
-                  {contact.address.map(line => (
-                    <Text key={line} type="body" as="p" color="secondary">
-                      {line}
-                    </Text>
-                  ))}
+                  <Text type="body" as="p" color="secondary">
+                    {contact.location}
+                  </Text>
+                  <Text type="body" as="p" color="secondary">
+                    {contact.reach}
+                  </Text>
                 </VStack>
               </VStack>
             </VStack>
@@ -216,7 +218,7 @@ export function ContactForm() {
 
               <TextArea
                 label="Your note"
-                placeholder="What are you building, and where has it got to?"
+                placeholder="What are you working on, and where has it got to?"
                 value={message}
                 onChange={setMessage}
                 rows={5}

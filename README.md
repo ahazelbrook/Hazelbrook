@@ -1,15 +1,17 @@
 # Hazelbrook &amp; Hazelbrook
 
-Marketing site for Hazelbrook &amp; Hazelbrook — infrastructure strategy and
-insight, with a focus on renewables. One page: the proposition, the practice,
-four service areas, and a contact form.
+Marketing site for Hazelbrook &amp; Hazelbrook — an independent infrastructure
+advisory in Melbourne, working across transport, energy, water and social
+infrastructure. One page: the proposition, the practice, a track record, a
+statement on conflicts, four service areas, and a contact form.
 
 Built with [Astryx](https://github.com/facebook/astryx) (Meta's design system)
 on Vite + React + TypeScript.
 
 ## Before it goes live
 
-Two things need real values. Both are in `src/content.ts`.
+Two jobs, both in `src/content.ts`. The full list of what must be confirmed is
+in [`docs/copy-plan.md`](docs/copy-plan.md) §6.
 
 **1 · Point the contact form at a real endpoint.**
 
@@ -25,12 +27,21 @@ Until that is a real URL the form runs in **preview mode**: it validates, and it
 tells the visitor plainly that nothing was sent. It never shows a success
 message for a message that did not go anywhere.
 
-**2 · Confirm the contact details.**
+**2 · Confirm the claims and the phone number.**
 
-The address, email and registration number come from the brand pack's
-stationery. The telephone number on that mock-up (`+44 20 7946 0102`) is in an
-Ofcom range **reserved for fiction and drama** — it is a placeholder, not a live
-line. Replace it before launch.
+Nothing on the page is a placeholder, so the site can ship as it stands. Three
+things still want checking:
+
+- **`+61 426 364 426`** is carried over from the previous site — confirm it is
+  a live line.
+- **`$30bn+` of projects worked on** and **15+ years** are load-bearing claims,
+  set in the display face. Check each against what you can evidence.
+
+**ABN and professional indemnity cover are deferred, not forgotten.** They
+belong on the footer's bottom line — the comment in `SiteFooter.tsx` marks the
+spot. Until they are there, a prime cannot onboard the practice as a
+subcontractor from the website alone, and a procurement officer has to ask for
+the ABN.
 
 ## Running it
 
@@ -89,14 +100,25 @@ drops to the monogram alone, which is what the deck reserves it for.
 
 ## Editing the words
 
-All copy lives in `src/content.ts` — hero, mission, the four service areas,
-contact section, and the enquiry types in the form dropdown. Nothing is
-hard-coded in the components.
+All copy lives in `src/content.ts` — hero, practice, track record, conduct, the
+four service areas, contact section, and the enquiry types in the form dropdown.
+Nothing is hard-coded in the components.
 
-The draft copy is written from the brand pack's own language (the proposition,
-the standfirsts, and the spectrum's sector meanings) and is meant to be
-rewritten. The figures in the practice section — `£40bn+` advised, two offices —
-are illustrative and should be checked before publication.
+Before changing anything structural, read [`docs/copy-plan.md`](docs/copy-plan.md).
+It is the brief the copy was written to: positioning, audience map, voice rules
+and lexicon, and a section-by-section content map. It also records what a brand
+review recommended and was deliberately *not* done (§7) — naming the principal,
+panel positions, an engagement-shapes block — so those decisions do not get
+silently reversed by the next edit.
+
+Two things in there are easy to undo by accident and shouldn't be:
+
+- **The third paragraph of the practice section** is the most commercially
+  valuable copy on the site. Every instinct in revision is to make it more
+  professional. Don't.
+- **The project card labels lead with the discipline**, not the city. That is
+  what makes the track record read as proof rather than borrowed glory, and it
+  is the reason the conduct section exists directly beneath it.
 
 ## Working on it with Claude
 

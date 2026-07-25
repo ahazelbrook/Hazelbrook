@@ -23,21 +23,13 @@ export function SiteFooter() {
 
           <Grid columns={{ minWidth: 200 }} gap={6} width="100%">
             <VStack gap={2}>
-              <p className="hb-label">Offices</p>
-              {contact.offices.map(office => (
-                <Text key={office} type="body" as="p" color="inherit">
-                  {office}
-                </Text>
-              ))}
-            </VStack>
-
-            <VStack gap={2}>
-              <p className="hb-label">London</p>
-              {contact.address.map(line => (
-                <Text key={line} type="body" as="p" color="inherit">
-                  {line}
-                </Text>
-              ))}
+              <p className="hb-label">Based</p>
+              <Text type="body" as="p" color="inherit">
+                {contact.location}
+              </Text>
+              <Text type="body" as="p" color="inherit">
+                {contact.reach}
+              </Text>
             </VStack>
 
             <VStack gap={2}>
@@ -66,11 +58,15 @@ export function SiteFooter() {
 
           <hr className="hb-rule hb-rule--reversed" />
 
+          {/* ABN and PI cover belong on this line — a prime cannot onboard a
+              subcontractor without current certificates, and a procurement
+              officer cannot progress an engagement without an ABN. They are
+              deferred rather than dropped: add them here when the real values
+              are to hand, alongside the copyright. */}
           <HStack justify="between" gap={4} wrap="wrap">
             <p className="hb-label">
               © {new Date().getFullYear()} {firm.name}
             </p>
-            <p className="hb-label">{contact.registration}</p>
           </HStack>
         </VStack>
       </div>

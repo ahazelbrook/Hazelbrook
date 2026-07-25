@@ -1,9 +1,14 @@
 /**
  * Every word on the site, and the one piece of configuration it needs.
  *
- * Copy is drafted from the brand pack's own language — the proposition, the
- * standfirsts and the spectrum's sector meanings all come from
- * "Hazelbrook Brand Deck.dc.html" v1.0. It is meant to be edited.
+ * The copy is written to the brief in `docs/copy-plan.md` — positioning, voice
+ * rules and a section-by-section content map, reviewed by a brand consultant
+ * before drafting. Read that first if you are changing anything structural.
+ *
+ * The short version: this is a Melbourne infrastructure advisory that works
+ * across transport, energy, water and social infrastructure. The copy stays
+ * specific by naming the *problem* rather than the sector, because a
+ * sector-agnostic page that widens its language turns into wallpaper.
  */
 
 // -----------------------------------------------------------------------------
@@ -29,50 +34,66 @@ export const isFormConfigured = (): boolean =>
 
 export const firm = {
   name: 'Hazelbrook & Hazelbrook',
-  discipline: 'Infrastructure Strategy & Insight',
-  established: 'Independent since 1974',
+  discipline: 'Infrastructure Strategy & Commercial Advisory',
+  established: 'Independent — no delivery arm',
   domain: 'hazelbrook.co',
 } as const;
 
 /**
- * Contact details as they appear on the printed stationery.
+ * Contact details.
  *
- * NOTE — the telephone number below is the one used on the brand pack's
- * business-card mock-up. +44 20 7946 xxxx is an Ofcom range reserved for
- * fiction and drama, so it is a placeholder, not a live line. Replace it (and
- * confirm the address and registration number) before the site goes public.
+ * The practice shows the city rather than a street address — deliberate for a
+ * practice that works on its clients' sites, and it keeps the footer honest
+ * about where the work is done rather than where the desk is.
+ *
+ * `reach` exists because a Melbourne line on its own reads as historical
+ * against a track record that is largely Sydney and Brisbane.
+ *
+ * NOTE — the telephone number is carried over from the existing site. Confirm
+ * it is a live line before launch.
  */
 export const contact = {
   email: 'hello@hazelbrook.co',
   telephone: '+61 426 364 426',
-  address: ['18 Ridgmount Street', 'London WC1E 7AH'],
-  offices: ['London', 'Sydney'],
-  registration: 'Registered in England no. OC148213',
+  location: 'Melbourne, Australia',
+  reach: 'Working nationally',
 } as const;
 
 // -----------------------------------------------------------------------------
 // THE PAGE
 // -----------------------------------------------------------------------------
 
+/**
+ * The proposition, ruled.
+ *
+ * "From grid connection to financial close" was the renewables version of this
+ * line. The replacement keeps the cadence and the three-line break — the hero's
+ * hairline ledger is built for exactly three lines — and swaps the energy-only
+ * starting point for one a road authority, a water utility and a wind developer
+ * all recognise.
+ *
+ * The standfirst is the only place on the page the sector list appears in full.
+ * Its last three verbs are deliberate: build it, fund it, justify it — the
+ * three things the page's audiences respectively do with a project.
+ */
 export const hero = {
   eyebrow: firm.discipline,
-  /** The proposition, straight from the deck. Ruled, as the brand intends. */
-  statement: ['From grid', 'connection to', 'financial close'],
+  statement: ['From business', 'case to', 'financial close'],
   standfirst:
-    'Independent counsel for the people building hard infrastructure — and for the funds and public bodies that back them.',
+    'Independent advice on the commercial case for transport, energy, water and social infrastructure — for the people who build it, fund it, and justify it.',
 } as const;
 
 export const mission = {
   label: 'The practice',
-  heading: 'Energised by solving the hard problems',
+  heading: 'Where the case meets the money',
   body: [
-    'We advise developers, funds and public bodies across the life of a renewable project — from feasibility and grid strategy, through consents and structuring, to the last mile before financial close.',
-    'The last mile is rarely a technical problem. It is a financial one, and it is usually decided by people who were not in the room when the engineering was settled. Our work is to make sure those two conversations are the same conversation.',
-    'We are independent, and quietly opinionated. We take a small number of engagements, we staff them with the people who sold them, and we tell clients what we actually think.',
+    'We advise on the commercial case for infrastructure across the life of a project — options and appraisal, the demand evidence underneath the case, funding and financing structure, and the procurement and negotiation that end at financial close.',
+    'The decisive problems are rarely technical. They are commercial, and they are settled by people who were not in the room when the engineering was agreed — a treasury, a credit committee, a board. Our work is to make sure those two conversations are the same conversation. That is as true of a road as of a wind farm.',
+    'We are independent, and quietly opinionated. No delivery arm, no bid of our own to protect, no audit relationship to preserve. We take a small number of engagements, we staff them with the people who sold them, and we tell clients what we actually think.',
   ],
   figures: [
-    { value: '1974', caption: 'Independent since' },
-    { value: '2', caption: 'Offices — London & Sydney' },
+    { value: '$30bn+', caption: 'Projects worked on' },
+    { value: '15+', caption: 'Years in infrastructure' },
   ],
 } as const;
 
@@ -81,26 +102,32 @@ export const mission = {
  *
  * Each card is a colour field from the brand spectrum with ink type on top,
  * which is the brand pack's own `.hb-field`: "A statement field — the one time
- * colour fills a page." The accents are assigned by sector the way the deck
- * defines them — Vapor for grid and engineering, Glow for generation, Dusk for
- * policy and the long view, Tide for transition and renewables.
+ * colour fills a page."
  *
- * The overviews below describe the projects themselves, drawn from public
- * reporting. They are deliberately not claims about the firm's specific
- * mandate, scope or fee on any one of them — that detail is yours to add, and
- * should be checked against what you can actually say publicly.
+ * Two rules govern what these cards may say, and they pull in opposite
+ * directions. Confidentiality prevents naming the client, the mandate or the
+ * fee. But it does not prevent naming the *nature of the task* — so the label
+ * on each card leads with the discipline rather than a city, which is the
+ * difference between borrowed glory and a proof point.
+ *
+ * The descriptions themselves describe the projects, from the public record.
+ * Where one is critical, it has to pass a test: would you say this out loud, in
+ * a meeting, to the agency that delivered it? An insight into why a variable
+ * turned commercial passes. A cost-overrun scoreboard does not — every reader
+ * already knows the number, and repeating it proves only that you read the
+ * paper.
  */
 export const trackRecord = {
   label: 'Track record',
-  heading: 'Worked on over $30bn of infrastructure projects',
+  heading: 'Six projects, and what they turned on',
   standfirst:
-    'Roads, heavy rail, motorway concessions and renewables — on both sides of the table, from business case to financial close.',
+    'Roads, heavy rail, motorway concessions and renewables. We have built the models that get tested, and tested the models that get built.',
 } as const;
 
 export const projects = [
   {
     accent: 'ember',
-    sector: 'Transaction · Sydney',
+    sector: 'Sell-side transaction · Motorway',
     figure: '$9.26bn',
     title: 'Sydney Motorway Corporation sale',
     description:
@@ -108,97 +135,137 @@ export const projects = [
   },
   {
     accent: 'vapor',
-    sector: 'Heavy rail · Brisbane',
+    sector: 'Business case & appraisal · Heavy rail',
     figure: '10.2 km',
     title: 'Cross River Rail',
     description:
-      'Twin tunnels beneath the Brisbane River and the CBD, with four new underground stations at Boggo Road, Woolloongabba, Albert Street and Roma Street. Delivered as a PPP, and a study in how a business case moves: costed at $5.4bn, now reported near $19bn, with services from 2029.',
+      'Twin tunnels beneath the Brisbane River and the CBD, with four new underground stations at Boggo Road, Woolloongabba, Albert Street and Roma Street, delivered as a PPP. Its first published cost and its current one reflect different scope, timing and risk allocation — separating the three is most of the work in reading an infrastructure number.',
   },
   {
     accent: 'dusk',
-    sector: 'Motorway · Melbourne',
+    sector: 'Commercial risk · Motorway',
     figure: '$10bn+',
     title: 'West Gate Tunnel',
     description:
-      'A second crossing for Melbourne’s west, linking the West Gate Freeway to the Port of Melbourne and CityLink. It opened in December 2025 at roughly double its original estimate — most of the overrun bought and paid for in a long dispute over where contaminated spoil could go.',
+      'A second crossing for Melbourne’s west, linking the West Gate Freeway to the Port of Melbourne and CityLink, opened in December 2025. Its largest single commercial exposure turned out to be a soil classification — where contaminated spoil could lawfully go was priced as a technical detail and settled as a contractual one.',
   },
   {
     accent: 'glow',
-    sector: 'Metro rail · Sydney',
+    sector: 'Demand & land value · Metro rail',
     figure: 'Driverless',
     title: 'Sydney Metro',
     description:
-      'Australia’s largest public transport programme: fully automated, high-frequency, and now extending 23 kilometres to Western Sydney Airport. Metro resets what land near a station is worth, which is the part of the case a conventional transport appraisal tends to miss.',
+      'Australia’s largest public transport program: fully automated, high-frequency, and now extending 23 kilometres to Western Sydney Airport. Metro resets what land near a station is worth, which is the part of the case a conventional transport appraisal tends to miss.',
   },
   {
     accent: 'tide',
-    sector: 'Motorway · Melbourne',
+    sector: 'Procurement & contract strategy · Motorway',
     figure: '$11.1bn',
     title: 'North East Link',
     description:
-      'Victoria’s longest road tunnel, and the largest road PPP ever let in Australia — a four-party partnership on an incentivised target cost, with risk and reward shared rather than simply transferred to the builder. A deliberate answer to how the last generation of contracts ended.',
+      'Victoria’s longest road tunnel, and the largest road PPP ever let in Australia — a four-party partnership on an incentivised target cost, with risk and reward shared rather than simply transferred to the builder. It is a deliberate answer to how the last generation of contracts ended.',
   },
   {
     accent: 'ember',
-    sector: 'Renewables · Australia',
+    sector: 'Diligence & financial close · Renewables',
     figure: 'Multiple',
-    title: 'Renewable energy M&A and financial close',
+    title: 'Renewable energy M&A',
     description:
-      'Buy-side and sell-side across wind, solar and storage — diligence, commercial structuring and the long grind to close. The technical case is usually settled early. The financing case is what decides whether the thing actually gets built.',
+      'Buy-side and sell-side across wind, solar and storage — valuation, negotiation and the long grind to close, on assets whose technical case was signed off long before anyone asked whether it could be financed.',
   },
 ] as const;
 
 /**
- * The four practice areas, each carrying its accent from the brand spectrum.
- * The spectrum's meanings are defined in the brand deck: Vapor is grid and
- * engineering, Glow is generation and yield, Dusk is policy and the long view,
- * Tide is transition and growth.
+ * Conduct — conflicts and confidentiality.
+ *
+ * The page claims knowledge of both sides of a transaction, names six live
+ * public projects and describes two of them critically. That combination raises
+ * a discretion question in a probity-conscious reader's mind whether we intend
+ * it or not, so it is answered directly rather than left hanging. It also
+ * explains why the cards above read the way they do.
  */
+export const conduct = {
+  label: 'Conduct',
+  heading: 'One party per transaction',
+  body: [
+    'We check conflicts before accepting an engagement, and act for one party per transaction. Client work is not discussed, and we do not carry client logos.',
+    'Nothing on this page describes a mandate, a client or a fee. The projects above are described from the public record.',
+  ],
+} as const;
+
+/**
+ * The four practice areas.
+ *
+ * Sequenced as a lifecycle — evidence, case, funding, close — because demand
+ * work sits underneath a business case rather than after a funding structure.
+ *
+ * The accents keep the brand deck's logic and shed its energy-sector readings:
+ * Dusk is the long view, Vapor is the network, Glow is yield, Tide is capital in
+ * motion. The deck's meanings translate to general infrastructure without
+ * strain.
+ *
+ * Only two of the four descriptions carry an opinion. Four consecutive
+ * aphorisms is a tic, and a reader who notices the tic stops believing any of
+ * them.
+ */
+export const servicesSection = {
+  label: 'What we do',
+  heading: 'Four questions that decide a project',
+} as const;
+
 export const services = [
   {
-    accent: 'vapor',
+    accent: 'dusk',
     index: '01',
-    title: 'Grid & Connections',
+    title: 'Strategy, Business Case & Assurance',
     description:
-      'Connection strategy, queue position and network charging. Where a project sits on the grid decides what it is worth long before anyone breaks ground.',
+      'Options analysis, appraisal and investment logic, and independent review of a case someone else has built. Most business cases fail scrutiny on their assumptions, not their arithmetic.',
+  },
+  {
+    accent: 'vapor',
+    index: '02',
+    title: 'Demand & Network Evidence',
+    description:
+      'Demand, patronage and network analysis: the forecast the rest of the case rests on, built so it can be interrogated line by line rather than defended as a black box.',
   },
   {
     accent: 'glow',
-    index: '02',
-    title: 'Generation & Yield',
-    description:
-      'Technology selection, yield assessment and revenue stacking across merchant, contracted and balancing markets. What the asset will actually earn, not what the brochure says.',
-  },
-  {
-    accent: 'dusk',
     index: '03',
-    title: 'Policy & Consents',
+    title: 'Financial Modelling & Funding',
     description:
-      'Planning strategy, consenting risk and regulatory change. The long view on schemes whose economics are set by decisions taken years before commissioning.',
+      'Financial models, funding structure and financing terms, affordability and value for money — built by the person who will sit in the room and answer for them.',
   },
   {
     accent: 'tide',
     index: '04',
-    title: 'Transition & Capital',
+    title: 'Transactions & Close',
     description:
-      'Commercial structuring, diligence support and the path to financial close. We sit on the developer’s side of the table, or the fund’s, and we say which risks are real.',
+      'Procurement strategy, commercial structuring, diligence and bid support, through to the point where risk allocation is finally settled.',
   },
 ] as const;
 
 export const contactSection = {
   label: 'Contact',
-  heading: 'Tell us what you are building',
+  heading: 'Tell us what you are working on',
   standfirst:
     'A short note is enough to start. We reply to every enquiry ourselves, usually within two working days.',
 } as const;
 
-/** Enquiry types offered in the contact form. */
+/**
+ * Enquiry types offered in the contact form.
+ *
+ * These mirror the four service areas. "Specialist capacity under your brand"
+ * is the one route on the page for an advisory firm or prime looking for bench
+ * capacity — a different transaction from a named mandate, and one that
+ * otherwise has nowhere to land.
+ */
 export const ENQUIRY_TYPES = [
   'New engagement',
-  'Grid & connections',
-  'Generation & yield',
-  'Policy & consents',
-  'Transition & capital',
+  'Strategy, business case or assurance',
+  'Demand and network evidence',
+  'Financial modelling and funding',
+  'Transactions and financial close',
+  'Specialist capacity under your brand',
   'Media or speaking',
   'Something else',
 ] as const;
