@@ -339,6 +339,138 @@
     left: var(--hb-space-5, 24px);
     top: var(--hb-space-3, 12px);
   }
+
+  /* ---------------------------------------------------------------------------
+     The Journal
+     Articles are prerendered to static HTML by scripts/prerender.mjs and ship
+     without any JavaScript, so these styles are the whole of their presentation
+     — there are no Astryx components on those pages to fall back on.
+
+     Body copy holds the brand's reading measure. Everything else (headings,
+     figures, rules) is allowed to run wider, which is what stops a long article
+     reading as one unbroken column.
+  ----------------------------------------------------------------------------*/
+  .hb-article {
+    max-width: var(--hb-measure);
+  }
+
+  .hb-article > * + * {
+    margin-block-start: var(--hb-space-4, 16px);
+  }
+
+  .hb-article p,
+  .hb-article li {
+    color: var(--hb-ink-80);
+  }
+
+  .hb-article h2 {
+    font-family: var(--hb-font-display);
+    font-size: var(--hb-display-m);
+    line-height: 1.14;
+    color: var(--hb-ink);
+    margin-block-start: var(--hb-space-8, 48px);
+  }
+
+  .hb-article h3 {
+    font-family: var(--hb-font-display);
+    font-size: 1.25rem;
+    line-height: 1.2;
+    color: var(--hb-ink);
+    margin-block-start: var(--hb-space-6, 32px);
+  }
+
+  .hb-article ul,
+  .hb-article ol {
+    padding-inline-start: var(--hb-space-5, 24px);
+  }
+
+  .hb-article li + li {
+    margin-block-start: var(--hb-space-2, 8px);
+  }
+
+  .hb-article a {
+    color: var(--hb-ink);
+    text-decoration-color: var(--hb-accent);
+    text-underline-offset: 3px;
+  }
+
+  .hb-article a:hover {
+    color: var(--hb-accent-deep);
+  }
+
+  /* A pulled figure — the one moment of display type inside running prose. The
+     brand deck's rule holds: numbers in the display face read as considered. */
+  .hb-article blockquote {
+    margin: var(--hb-space-8, 48px) 0;
+    padding-inline-start: var(--hb-space-5, 24px);
+    border-inline-start: 2px solid var(--hb-accent);
+    font-family: var(--hb-font-display);
+    font-size: 1.375rem;
+    line-height: 1.32;
+    color: var(--hb-ink);
+  }
+
+  .hb-article blockquote p {
+    color: inherit;
+  }
+
+  .hb-article hr {
+    height: 1px;
+    background: var(--hb-rule-color);
+    border: 0;
+    margin-block: var(--hb-space-8, 48px);
+  }
+
+  /* ---------------------------------------------------------------------------
+     Journal index — rows on hairlines, the same decision as the services list.
+     These are scannable records, so they are not wrapped in cards.
+  ----------------------------------------------------------------------------*/
+  .hb-entries {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  .hb-entry {
+    padding-block: var(--hb-space-6, 32px);
+    border-top: var(--hb-rule);
+  }
+
+  .hb-entry:last-child {
+    border-bottom: var(--hb-rule);
+  }
+
+  .hb-entry a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+
+  .hb-entry a:hover .hb-entry__title {
+    color: var(--hb-accent-deep);
+  }
+
+  .hb-entry__title {
+    font-family: var(--hb-font-display);
+    font-size: var(--hb-display-m);
+    line-height: 1.14;
+    color: var(--hb-ink);
+    margin-block: var(--hb-space-2, 8px);
+    transition: color 140ms ease;
+  }
+
+  .hb-entry__standfirst {
+    color: var(--hb-ink-80);
+    max-width: var(--hb-measure);
+  }
+
+  /* The meta line under an article title — date and reading time. */
+  .hb-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--hb-space-3, 12px);
+  }
 }
 
 /* -----------------------------------------------------------------------------

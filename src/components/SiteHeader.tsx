@@ -17,6 +17,9 @@ import { firm } from '../content';
 const NAV = [
   { href: '#practice', label: 'Practice' },
   { href: '#services', label: 'Services' },
+  /* The one link that leaves the page. The Journal is prerendered to static
+     HTML by scripts/prerender.mjs and is not part of this app. */
+  { href: '/journal/', label: 'Journal' },
   { href: '#contact', label: 'Contact' },
 ];
 
