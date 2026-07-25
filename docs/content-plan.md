@@ -101,9 +101,20 @@ proceed), then give the reader what to actually do about it: the questions that
 interrogate a forecast.
 
 **Must contain:**
-- Toll road demand averages **~77% of forecast** — roughly 23% below — against
-  ~96% for untolled roads, and the asymmetry of the error distribution.
-  ([Transport Reviews](https://www.tandfonline.com/doi/abs/10.1080/01441640903211173))
+- Toll road demand averages **~77% of forecast** in year one — roughly 23%
+  below — and the asymmetry of the error distribution.
+  ([Bain, *Transportation* 36(5)](https://link.springer.com/article/10.1007/s11116-009-9199-7))
+
+  > **Corrected during drafting.** This brief originally attributed the 0.77
+  > ratio to Li & Hensher's *Toll Roads in Australia* ([Transport
+  > Reviews](https://www.tandfonline.com/doi/abs/10.1080/01441640903211173)),
+  > which is not its source, and paired it with "~96% for untolled roads" — a
+  > figure that could not be verified anywhere. The confirmed comparison is
+  > stronger: untolled road traffic runs *above* forecast, averaging +9.5%
+  > ([Flyvbjerg, Holm & Buhl, JAPA 71(2)](https://www.tandfonline.com/doi/abs/10.1080/01944360508976688)),
+  > which makes the tolled/untolled asymmetry the point rather than a footnote.
+  > Li & Hensher stays as the source for the Australian claim it does support.
+  > Left visible because a brief that quietly corrects itself teaches nobody.
 - **Sydney's Cross City Tunnel opened at roughly one third of forecast traffic.**
   The most famous Australian instance, and it must be handled under the copy
   plan's candour test — explain the mechanism, do not score the point.
@@ -201,10 +212,18 @@ claims that cases fail on assumptions rather than arithmetic — this article is
 the evidence for that claim.
 
 **Must contain:**
-- The **7% real discount rate** convention, and the requirement to present
-  **3%, 7% and 10%** in detailed analysis — and why a case whose conclusion
-  flips between them has a problem the BCR is not showing.
-  ([IA guide to economic appraisal](https://www.infrastructureaustralia.gov.au/sites/default/files/2021-07/Assessment%20Framework%202021%20Guide%20to%20economic%20appraisal.pdf))
+- The **7% real discount rate** convention, presented alongside **4% and 10%**
+  for sensitivity — and why a case whose conclusion flips between them has a
+  problem the BCR is not showing.
+  ([IA guide to economic appraisal](https://www.infrastructureaustralia.gov.au/sites/default/files/2021-07/Assessment%20Framework%202021%20Guide%20to%20economic%20appraisal.pdf) ·
+  [ATAP T2](https://www.atap.gov.au/sites/default/files/documents/ATAP-T2-CBA-FINAL-2022-04-26.pdf))
+
+  > **Corrected during drafting.** This brief originally said "3%, 7% and 10%".
+  > The Commonwealth sensitivity pair is 4% and 10%; the 3% belongs to NSW,
+  > whose TPG23-08 sets a 5% central rate — the first Australian jurisdiction to
+  > move to it. The writer caught this and turned the divergence into the better
+  > point: a BCR is not portable between jurisdictions, so comparing two ratios
+  > without naming the convention behind each is not a comparison.
 - **20 or 30 year** appraisal periods, and the sensitivity of the result to
   residual value assumptions at the boundary.
 - Infrastructure Australia's framework recommending **at least two options plus
