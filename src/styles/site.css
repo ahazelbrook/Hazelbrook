@@ -1,0 +1,221 @@
+/* =============================================================================
+   SITE CHROME
+   -----------------------------------------------------------------------------
+   Page-level structure only: the sticky header, the reading container, section
+   rhythm, and the two elements the brand pack describes but does not ship as
+   CSS (the ruled line's per-line baseline, the reversed footer's hairlines).
+
+   Everything here composes brand tokens — no new colours, no new type. If a
+   value is not derived from a --hb-* token it is a layout measurement.
+============================================================================= */
+
+@layer components {
+  /* ---------------------------------------------------------------------------
+     Container & section rhythm
+     "Generous edges. Margins on an 8px scale, and always more than feels
+     necessary." — the deck.
+  ----------------------------------------------------------------------------*/
+  .hb-container {
+    width: 100%;
+    max-width: 1180px;
+    margin-inline: auto;
+    padding-inline: var(--hb-space-5, 24px);
+  }
+
+  .hb-section {
+    padding-block: clamp(64px, 9vw, 128px);
+  }
+
+  .hb-section--hero {
+    padding-block: clamp(72px, 12vw, 176px) clamp(64px, 9vw, 128px);
+  }
+
+  .hb-section--shade {
+    background: var(--hb-paper-shade);
+  }
+
+  /* Hairline between adjacent paper sections, so the page reads as a ruled
+     document rather than a scroll of blocks. */
+  .hb-section + .hb-section:not(.hb-section--shade) {
+    border-top: var(--hb-rule);
+  }
+
+  /* ---------------------------------------------------------------------------
+     Header
+  ----------------------------------------------------------------------------*/
+  .hb-site-header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    border-bottom: var(--hb-rule);
+    background: color-mix(in srgb, var(--hb-paper) 88%, transparent);
+    backdrop-filter: saturate(180%) blur(12px);
+  }
+
+  .hb-site-header__inner {
+    width: 100%;
+    max-width: 1180px;
+    margin-inline: auto;
+    padding: var(--hb-space-3, 12px) var(--hb-space-5, 24px);
+  }
+
+  .hb-lockup {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  /* The wordmark — the one sanctioned setting of the name in type. */
+  .hb-wordmark {
+    font-family: var(--hb-font-display);
+    font-size: 1.0625rem;
+    letter-spacing: -0.005em;
+    line-height: 1.06;
+    color: var(--hb-ink);
+    white-space: nowrap;
+  }
+
+  .hb-wordmark--reversed {
+    color: var(--hb-paper);
+  }
+
+  /* Below ~560px the full name and the nav cannot share a rule without
+     colliding. The monogram carries the header alone — which is what the deck
+     reserves it for: "favicon, avatar, stamp". */
+  @media (max-width: 560px) {
+    .hb-wordmark {
+      display: none;
+    }
+  }
+
+  .hb-nav-link {
+    color: var(--hb-ink-80);
+    text-decoration: none;
+    padding-bottom: 2px;
+    border-bottom: 2px solid transparent;
+    transition: color 140ms ease, border-color 140ms ease;
+  }
+
+  .hb-nav-link:hover {
+    color: var(--hb-ink);
+    border-bottom-color: var(--hb-accent);
+  }
+
+  /* ---------------------------------------------------------------------------
+     The ruled line
+     The brand's .hb-ruled paints hairlines with a repeating gradient, which
+     assumes every line is exactly --hb-ruled-leading tall. Rendering each line
+     as its own block guarantees that, so the ruling lands on the baseline
+     instead of drifting wherever the browser happens to wrap.
+  ----------------------------------------------------------------------------*/
+  .hb-ruled__line {
+    display: block;
+  }
+
+  /* ---------------------------------------------------------------------------
+     Reading measure
+  ----------------------------------------------------------------------------*/
+  .hb-prose {
+    max-width: var(--hb-measure);
+  }
+
+  .hb-prose p {
+    color: var(--hb-ink-80);
+  }
+
+  /* ---------------------------------------------------------------------------
+     Services — rows on hairlines, not cards
+  ----------------------------------------------------------------------------*/
+  .hb-services {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: var(--hb-rule);
+  }
+
+  .hb-service {
+    display: grid;
+    grid-template-columns: 96px minmax(0, 1fr);
+    gap: var(--hb-space-5, 24px);
+    padding-block: var(--hb-space-7, 48px);
+    border-bottom: var(--hb-rule);
+  }
+
+  .hb-service__index {
+    padding-top: 0.6em;
+  }
+
+  .hb-service__body {
+    max-width: 62ch;
+  }
+
+  @media (max-width: 700px) {
+    .hb-service {
+      grid-template-columns: 1fr;
+      gap: var(--hb-space-4, 16px);
+      padding-block: var(--hb-space-6, 32px);
+    }
+
+    .hb-service__index {
+      padding-top: 0;
+    }
+  }
+
+  /* ---------------------------------------------------------------------------
+     Reversed footer
+     The brand's .hb-panel--ink handles ground and display type; these are the
+     pieces that only appear on a reversed ground.
+  ----------------------------------------------------------------------------*/
+  .hb-rule--reversed {
+    background: rgba(246, 245, 241, 0.22);
+  }
+
+  .hb-panel--ink :where(p, span) {
+    color: rgba(246, 245, 241, 0.78);
+  }
+
+  .hb-panel--ink .hb-label {
+    color: rgba(246, 245, 241, 0.55);
+  }
+
+  .hb-link--reversed {
+    color: var(--hb-paper);
+    border-bottom-color: var(--hb-ember);
+  }
+
+  .hb-link--reversed:hover {
+    color: var(--hb-ember);
+  }
+
+  /* ---------------------------------------------------------------------------
+     Skip link
+  ----------------------------------------------------------------------------*/
+  .hb-skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 100;
+    padding: 12px 20px;
+    background: var(--hb-ink);
+    color: var(--hb-paper);
+    text-decoration: none;
+  }
+
+  .hb-skip-link:focus {
+    left: var(--hb-space-5, 24px);
+    top: var(--hb-space-3, 12px);
+  }
+}
+
+/* -----------------------------------------------------------------------------
+   Motion — respect the visitor's preference.
+-------------------------------------------------------------------------------*/
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

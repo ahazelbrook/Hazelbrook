@@ -1,0 +1,246 @@
+/* =============================================================================
+   HAZELBROOK & HAZELBROOK — BRAND PRIMITIVES
+   Derived from hazelbrook-brand.css v1.0 (brand pack).
+   -----------------------------------------------------------------------------
+   WHAT THIS FILE IS — AND IS NOT
+
+   The brand pack ships two expressions of the same decisions:
+     hazelbrook-brand.css   tokens + Astryx bridge + .hb-* primitives
+     hazelbrookTheme.ts     the same decisions as an Astryx defineTheme() theme
+
+   This site uses hazelbrookTheme.ts for everything Astryx can express — ink,
+   paper, Ember accent, zero radius, Young Serif / Space Grotesk. That is the
+   Astryx way, and it keeps --color-* off :root as the design system requires.
+
+   So SECTION 2 of the brand pack (the CSS token bridge) is deliberately NOT
+   reproduced here — it would set the same --color-* values a second time, in
+   the one place Astryx tells you not to. The theme owns those tokens.
+
+   What remains is what Astryx has no component for: the ruled line, the dot
+   grid, the tracked label, the reading measure. Editorial moves, not UI.
+============================================================================= */
+
+/* The two brand faces, self-hosted.
+   The brand pack pulls these from Google Fonts. We ship them with the site
+   instead: the mark and the display face are the first thing a visitor sees,
+   and they should not depend on a third-party CDN being reachable. Same
+   families, same weights (Young Serif is single-weight by design; Space
+   Grotesk carries 300–700), served from our own origin.
+   Both are SIL Open Font License 1.1 — see the LICENSE file in each package. */
+@import '@fontsource/young-serif/400.css';
+@import '@fontsource/space-grotesk/300.css';
+@import '@fontsource/space-grotesk/400.css';
+@import '@fontsource/space-grotesk/500.css';
+@import '@fontsource/space-grotesk/700.css';
+
+/* -----------------------------------------------------------------------------
+   1 · BRAND TOKENS
+   The brand's own namespace, used only by the primitives below.
+-------------------------------------------------------------------------------*/
+:root {
+  /* Foundation. Ink and paper carry every page. */
+  --hb-ink: #17181a;
+  --hb-ink-80: #47474a;
+  --hb-ink-55: #8a8983;
+  --hb-paper: #f6f5f1;
+  --hb-paper-shade: #efeee9;
+  --hb-rule-color: rgba(23, 24, 26, 0.14);
+  --hb-rule-strong: rgba(23, 24, 26, 0.25);
+  --hb-rule: 1px solid var(--hb-rule-color);
+
+  /* The spectrum. Ember is fixed — it is the colour of the ampersand in the
+     mark. The other four are editorial, one per section or sector. */
+  --hb-ember-deep: #b4442e;  --hb-ember: #e46c4a;  --hb-ember-tint: #fcd5d0;
+  --hb-glow-deep:  #a78324;  --hb-glow:  #d5bf70;  --hb-glow-tint:  #f3f2d8;
+  --hb-dusk-deep:  #763e94;  --hb-dusk:  #c6abd4;  --hb-dusk-tint:  #f8eeff;
+  --hb-vapor-deep: #3d7499;  --hb-vapor: #8dd3e3;  --hb-vapor-tint: #e3f6fa;
+  --hb-tide-deep:  #3d9958;  --hb-tide:  #91e0cc;  --hb-tide-tint:  #c9f7e8;
+
+  --hb-accent: var(--hb-ember);
+  --hb-accent-deep: var(--hb-ember-deep);
+  --hb-accent-tint: var(--hb-ember-tint);
+
+  --hb-font-display: 'Young Serif', 'Iowan Old Style', Georgia, serif;
+  --hb-font-body: 'Space Grotesk', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+  /* Display scale — Young Serif, tight, tracking -0.01em */
+  --hb-display-xl: 6rem;
+  --hb-display-l: 4rem;
+  --hb-display-m: 2.75rem;
+  --hb-display-s: 1.875rem;
+  --hb-standfirst: 1.5rem;
+
+  --hb-label: 0.6875rem;
+  --hb-leading-display: 1.04;
+  --hb-leading-text: 1.68;
+  --hb-tracking-display: -0.01em;
+  --hb-tracking-label: 0.18em;
+
+  --hb-measure: 62ch;
+}
+
+/* -----------------------------------------------------------------------------
+   2 · BASE
+   Astryx applies its tokens to the element <Theme> renders, not to <body>, so
+   the page's own ground has to be set here — otherwise paper stops at the
+   content box and the browser's white shows through on overscroll.
+-------------------------------------------------------------------------------*/
+body {
+  background: var(--hb-paper);
+  color: var(--hb-ink);
+  font-family: var(--hb-font-body);
+  line-height: var(--hb-leading-text);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  text-wrap: pretty;
+}
+
+::selection {
+  background: var(--hb-accent-tint);
+  color: var(--hb-ink);
+}
+
+/* -----------------------------------------------------------------------------
+   3 · PRIMITIVES
+   The editorial moves that make a page look like Hazelbrook.
+-------------------------------------------------------------------------------*/
+@layer components {
+  /* — Display type ——————————————————————————————————————————————— */
+  .hb-display {
+    font-family: var(--hb-font-display);
+    font-weight: 400;
+    font-size: var(--hb-display-l);
+    line-height: var(--hb-leading-display);
+    letter-spacing: var(--hb-tracking-display);
+    color: var(--hb-ink);
+    margin: 0;
+    text-wrap: balance;
+  }
+  .hb-display--xl { font-size: var(--hb-display-xl); }
+  .hb-display--m  { font-size: var(--hb-display-m); }
+  .hb-display--s  { font-size: var(--hb-display-s); }
+
+  /* The one permitted emphasis inside display type: colour on a word.
+     Never a swapped font, never italic, never a highlight. */
+  .hb-display em,
+  .hb-accent-word {
+    font-style: normal;
+    color: var(--hb-accent-deep);
+  }
+
+  /* — THE SIGNATURE: ruled display type ————————————————————————————
+     A hairline under every line of a display setting, like a ledger. */
+  .hb-ruled {
+    --hb-ruled-leading: 1.34em;
+    line-height: var(--hb-ruled-leading);
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent calc(var(--hb-ruled-leading) - 1px),
+      var(--hb-rule-color) calc(var(--hb-ruled-leading) - 1px),
+      var(--hb-rule-color) var(--hb-ruled-leading)
+    );
+  }
+
+  .hb-standfirst {
+    font-family: var(--hb-font-display);
+    font-size: var(--hb-standfirst);
+    line-height: 1.38;
+    color: var(--hb-ink-80);
+    margin: 0;
+    max-width: 46ch;
+  }
+
+  /* — Text ——————————————————————————————————————————————————————— */
+  .hb-measure { max-width: var(--hb-measure); }
+
+  .hb-label {
+    font-family: var(--hb-font-body);
+    font-size: var(--hb-label);
+    font-weight: 500;
+    letter-spacing: var(--hb-tracking-label);
+    text-transform: uppercase;
+    color: var(--hb-ink-55);
+    line-height: 1;
+  }
+
+  /* Figures set in Young Serif read as considered, not generated. */
+  .hb-figure {
+    font-family: var(--hb-font-display);
+    font-size: 4.125rem;
+    line-height: 0.9;
+    color: var(--hb-ink);
+  }
+  .hb-figure > span { color: var(--hb-accent-deep); }
+
+  /* — Rules & grounds ————————————————————————————————————————————— */
+  .hb-rule { height: 1px; background: var(--hb-rule-color); border: 0; margin: 0; }
+  .hb-rule--ink { background: var(--hb-ink); }
+
+  .hb-panel--ink { background: var(--hb-ink); color: var(--hb-paper); }
+  .hb-panel--ink .hb-display { color: var(--hb-paper); }
+  .hb-panel--ink .hb-label { color: rgba(246, 245, 241, 0.55); }
+
+  /* — Accent marks. Colour arrives small: a dot, a word. ——————————— */
+  .hb-dot {
+    display: inline-block;
+    width: 0.75em;
+    height: 0.75em;
+    border-radius: 50%;
+    background: var(--hb-accent);
+  }
+
+  /* The single texture: a fine dot grid. Never a gradient, never a shadow. */
+  .hb-dotgrid {
+    background-image: radial-gradient(var(--hb-ink) 1.1px, transparent 1.1px);
+    background-size: 9px 9px;
+    opacity: 0.45;
+  }
+
+  /* A link that reads as editorial: hairline now, accent on hover. */
+  .hb-link {
+    color: var(--hb-ink);
+    border-bottom: 2px solid var(--hb-accent);
+    padding-bottom: 2px;
+    text-decoration: none;
+    transition: color 140ms ease;
+  }
+  .hb-link:hover { color: var(--hb-accent-deep); }
+
+  :where(.hb-link, a):focus-visible {
+    outline: 2px solid var(--hb-accent-deep);
+    outline-offset: 3px;
+  }
+}
+
+/* -----------------------------------------------------------------------------
+   4 · ACCENT SWITCHING
+   One accent per section. Ember leads; the rest are editorial.
+-------------------------------------------------------------------------------*/
+[data-hb-accent='ember'] { --hb-accent: var(--hb-ember); --hb-accent-deep: var(--hb-ember-deep); --hb-accent-tint: var(--hb-ember-tint); }
+[data-hb-accent='glow']  { --hb-accent: var(--hb-glow);  --hb-accent-deep: var(--hb-glow-deep);  --hb-accent-tint: var(--hb-glow-tint); }
+[data-hb-accent='dusk']  { --hb-accent: var(--hb-dusk);  --hb-accent-deep: var(--hb-dusk-deep);  --hb-accent-tint: var(--hb-dusk-tint); }
+[data-hb-accent='vapor'] { --hb-accent: var(--hb-vapor); --hb-accent-deep: var(--hb-vapor-deep); --hb-accent-tint: var(--hb-vapor-tint); }
+[data-hb-accent='tide']  { --hb-accent: var(--hb-tide);  --hb-accent-deep: var(--hb-tide-deep);  --hb-accent-tint: var(--hb-tide-tint); }
+
+/* -----------------------------------------------------------------------------
+   5 · RESPONSIVE
+   The display scale is set for a desktop page. Step it down rather than let
+   Young Serif break the measure on a phone.
+-------------------------------------------------------------------------------*/
+@media (max-width: 900px) {
+  :root {
+    --hb-display-xl: 3.5rem;
+    --hb-display-l: 2.5rem;
+    --hb-display-m: 2rem;
+    --hb-display-s: 1.5rem;
+    --hb-standfirst: 1.25rem;
+  }
+}
+
+@media (max-width: 560px) {
+  :root {
+    --hb-display-xl: 2.75rem;
+    --hb-display-l: 2rem;
+  }
+}

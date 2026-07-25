@@ -1,0 +1,23 @@
+/* =============================================================================
+   STYLE ORCHESTRATION
+   -----------------------------------------------------------------------------
+   Layer order is declared once, up front, so the cascade is decided here rather
+   than by import order or specificity. The brand pack's own instruction:
+
+     @layer reset, theme, base, astryx-base, astryx-theme, components, utilities;
+
+   Astryx's reset and base CSS land in astryx-base. The Hazelbrook theme is
+   applied through <Theme theme={hazelbrookTheme}> in main.tsx rather than a
+   stylesheet, so nothing here needs to write --color-* — the design system asks
+   that those stay off :root, and the theme honours that.
+
+   The brand and site stylesheets add only what Astryx has no component for:
+   editorial typography and page chrome.
+============================================================================= */
+
+@layer reset, theme, base, astryx-base, astryx-theme, components, utilities;
+
+@import '@astryxdesign/core/reset.css' layer(astryx-base);
+@import '@astryxdesign/core/astryx.css' layer(astryx-base);
+@import './hazelbrook-brand.css';
+@import './site.css';
