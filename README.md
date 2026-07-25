@@ -10,8 +10,8 @@ on Vite + React + TypeScript.
 
 ## Before it goes live
 
-Two things need real values. Both are in `src/content.ts`, and the full list of
-what must be confirmed is in [`docs/copy-plan.md`](docs/copy-plan.md) §6.
+Two jobs, both in `src/content.ts`. The full list of what must be confirmed is
+in [`docs/copy-plan.md`](docs/copy-plan.md) §6.
 
 **1 · Point the contact form at a real endpoint.**
 

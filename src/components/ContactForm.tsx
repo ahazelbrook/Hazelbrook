@@ -4,7 +4,8 @@
  * Kept deliberately short. The brand's own promise is that "a short note is
  * enough to start", so the form asks for five things and no more: no budget
  * bands, no timeline pickers, no "how did you hear about us". A consultancy
- * that qualifies leads with a dropdown does not read as independent counsel.
+ * that qualifies leads with a dropdown does not read as a practice worth
+ * writing to.
  *
  * Submission posts JSON to FORM_ENDPOINT (Formspree and its equivalents all
  * accept this shape). Until that endpoint is configured the form stays in

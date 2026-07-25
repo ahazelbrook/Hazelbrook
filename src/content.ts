@@ -68,8 +68,8 @@ export const contact = {
  * a real problem, not a typo.
  */
 export const practiceDetails = [
-  { label: 'ABN', value: 'REPLACE_WITH_ABN' },
-  { label: 'Insurance', value: 'Professional indemnity and public liability — REPLACE with cover' },
+  { label: 'ABN', value: 'REPLACE — ABN' },
+  { label: 'Insurance', value: 'REPLACE — professional indemnity and public liability cover' },
 ] as const;
 
 // -----------------------------------------------------------------------------
@@ -93,7 +93,7 @@ export const hero = {
   eyebrow: firm.discipline,
   statement: ['From business', 'case to', 'financial close'],
   standfirst:
-    'Independent advice on the commercial case for infrastructure — transport, energy, water and social — for the people who build it, fund it, and have to justify it.',
+    'Independent advice on the commercial case for transport, energy, water and social infrastructure — for the people who build it, fund it, and justify it.',
 } as const;
 
 export const mission = {
@@ -101,7 +101,7 @@ export const mission = {
   heading: 'Where the case meets the money',
   body: [
     'We advise on the commercial case for infrastructure across the life of a project — options and appraisal, the demand evidence underneath the case, funding and financing structure, and the procurement and negotiation that end at financial close.',
-    'The decisive problems are rarely technical. They are commercial, and they are usually settled by people who were not in the room when the engineering was agreed — a treasury, a credit committee, a board. Our work is to make sure those two conversations are the same conversation. That is as true of a road business case as it is of a wind farm.',
+    'The decisive problems are rarely technical. They are commercial, and they are settled by people who were not in the room when the engineering was agreed — a treasury, a credit committee, a board. Our work is to make sure those two conversations are the same conversation. That is as true of a road as of a wind farm.',
     'We are independent, and quietly opinionated. No delivery arm, no bid of our own to protect, no audit relationship to preserve. We take a small number of engagements, we staff them with the people who sold them, and we tell clients what we actually think.',
   ],
   figures: [
@@ -132,7 +132,7 @@ export const mission = {
  */
 export const trackRecord = {
   label: 'Track record',
-  heading: 'Six projects, and what decided them',
+  heading: 'Six projects, and what they turned on',
   standfirst:
     'Roads, heavy rail, motorway concessions and renewables. We have built the models that get tested, and tested the models that get built.',
 } as const;
@@ -152,7 +152,7 @@ export const projects = [
     figure: '10.2 km',
     title: 'Cross River Rail',
     description:
-      'Twin tunnels beneath the Brisbane River and the CBD, with four new underground stations at Boggo Road, Woolloongabba, Albert Street and Roma Street, delivered as a PPP. Its first published cost and its current one are not the same scope, the same year or the same risk allocation — separating those three is most of the work in reading an infrastructure number.',
+      'Twin tunnels beneath the Brisbane River and the CBD, with four new underground stations at Boggo Road, Woolloongabba, Albert Street and Roma Street, delivered as a PPP. Its first published cost and its current one reflect different scope, timing and risk allocation — separating the three is most of the work in reading an infrastructure number.',
   },
   {
     accent: 'dusk',
@@ -176,7 +176,7 @@ export const projects = [
     figure: '$11.1bn',
     title: 'North East Link',
     description:
-      'Victoria’s longest road tunnel, and the largest road PPP ever let in Australia — a four-party partnership on an incentivised target cost, with risk and reward shared rather than simply transferred to the builder. A deliberate answer to how the last generation of contracts ended.',
+      'Victoria’s longest road tunnel, and the largest road PPP ever let in Australia — a four-party partnership on an incentivised target cost, with risk and reward shared rather than simply transferred to the builder. It is a deliberate answer to how the last generation of contracts ended.',
   },
   {
     accent: 'ember',
@@ -184,7 +184,7 @@ export const projects = [
     figure: 'Multiple',
     title: 'Renewable energy M&A',
     description:
-      'Buy-side and sell-side across wind, solar and storage — diligence, commercial structuring and the long grind to close. The technical case is usually settled early. The financing case is what decides whether the thing actually gets built.',
+      'Buy-side and sell-side across wind, solar and storage — valuation, negotiation and the long grind to close, on assets whose technical case was signed off long before anyone asked whether it could be financed.',
   },
 ] as const;
 
@@ -201,7 +201,7 @@ export const conduct = {
   label: 'Conduct',
   heading: 'One party per transaction',
   body: [
-    'We check conflicts before we accept an engagement, and we act for one party per transaction. Client work is not discussed, and we do not carry client logos.',
+    'We check conflicts before accepting an engagement, and act for one party per transaction. Client work is not discussed, and we do not carry client logos.',
     'Nothing on this page describes a mandate, a client or a fee. The projects above are described from the public record.',
   ],
 } as const;
@@ -232,7 +232,7 @@ export const services = [
     index: '01',
     title: 'Strategy, Business Case & Assurance',
     description:
-      'Options analysis, appraisal and investment logic — and independent review of a case someone else has built. Most business cases fail scrutiny on their assumptions, not their arithmetic.',
+      'Options analysis, appraisal and investment logic, and independent review of a case someone else has built. Most business cases fail scrutiny on their assumptions, not their arithmetic.',
   },
   {
     accent: 'vapor',
@@ -246,14 +246,14 @@ export const services = [
     index: '03',
     title: 'Financial Modelling & Funding',
     description:
-      'Financial models, funding and financing structure, affordability and value for money — built by the person who will sit in the room and answer for them.',
+      'Financial models, funding structure and financing terms, affordability and value for money — built by the person who will sit in the room and answer for them.',
   },
   {
     accent: 'tide',
     index: '04',
     title: 'Transactions & Close',
     description:
-      'Procurement strategy, commercial structuring, diligence and bid support, through to the negotiation where risk allocation is actually settled.',
+      'Procurement strategy, commercial structuring, diligence and bid support, through to the point where risk allocation is finally settled.',
   },
 ] as const;
 

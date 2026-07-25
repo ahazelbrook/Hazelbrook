@@ -3,7 +3,8 @@
 A brief for the site's copy. It defines the positioning, the voice, and what
 every block of words on the page has to do, before any of it is written.
 
-Status: **v2** — brand review complete and rolled in (see §8). Ready to draft.
+Status: **v3** — drafted, brand-reviewed and edited. All six stages in §8 are
+complete; §6 lists what still needs real values before launch.
 
 ---
 
@@ -145,8 +146,14 @@ magic-circle register, and in Australia counsel means a barrister.
 
 **Handle with care:** *defence* — out of the copy by decision, so no "national
 security" or "sovereign capability" euphemisms either; the sector list simply
-doesn't include it. *Independent* — only ever adjacent to what it is
-independent of.
+doesn't include it.
+
+***Independent*** — only ever adjacent to what it is independent of, with **one
+sanctioned exception**: the hero standfirst, where there is no room for the
+qualifier and the practice section makes it concrete two screens below. The
+editorial pass found three bare uses and was right about two of them; the meta
+and Open Graph descriptions now carry "no delivery arm". If a future edit adds
+a fourth, the exception has stopped being an exception.
 
 ---
 
