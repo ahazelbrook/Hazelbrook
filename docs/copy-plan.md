@@ -295,11 +295,11 @@ named. Cheapest high-value block on the page.
 |---|---|---|
 | `firm.discipline` | Infrastructure Strategy & Insight | Broaden; appears in header, footer and meta |
 | `firm.established` | Independent since 1974 | Not defensible for this practice — replace with a plain independence line |
-| `contact.address` | 18 Ridgmount Street, London | Melbourne — **needs a real address** |
-| `contact.offices` | London, Sydney | Melbourne, **working nationally** — a Melbourne-only line against a Sydney/Brisbane track record reads as historical |
-| `contact.registration` | Registered in England no. OC148213 | ABN — **needs a real number** |
-| **Practice details** | — | New line: PI and public liability cover, ABN, GST registration. These are procurement enablers, not legal footnotes: a prime cannot onboard without PI certificates and a procurement officer cannot progress without an ABN. **Needs real values** |
-| `SiteFooter.tsx` | Column hard-coded `London` | Column labels follow the city |
+| `contact.address` | 18 Ridgmount Street, London | City alone — *Melbourne, Australia* |
+| `contact.offices` | London, Sydney | `reach: 'Working nationally'` — a Melbourne-only line against a Sydney/Brisbane track record reads as historical |
+| `contact.registration` | Registered in England no. OC148213 | Removed. ABN deferred (§6) |
+| **Practice details** | — | PI cover and ABN deferred by decision. The footer's bottom line is where they go and the comment there marks the spot |
+| `SiteFooter.tsx` | Column hard-coded `London` | One "Based" column, from `contact` |
 | `index.html` | `lang="en-GB"`, renewables description | `en-AU`, new description, new OG copy |
 | `README.md` | "focus on renewables", £40bn figure | Rewrite the copy sections |
 
@@ -307,15 +307,24 @@ named. Cheapest high-value block on the page.
 
 ## 6 · Facts to confirm before launch
 
-Placeholders in the draft, flagged in code. None can be invented:
+Nothing on the page is now a placeholder — the site can ship as it stands. What
+remains is confirmation and deferred additions:
 
-1. **Street address** in Melbourne (or the decision to show the city only).
-2. **ABN / ACN** to replace the England registration.
-3. **PI and public liability cover** — insurer and sums, for the practice
-   details line.
-4. **Telephone** — `+61 426 364 426` is already in the file; confirm it's live.
-5. **`$30bn+` and `15+ years`** — both are load-bearing claims on the page.
-6. **Form endpoint** — the contact form stays in preview mode until set.
+1. **Telephone** — `+61 426 364 426` is carried over from the previous site.
+   Confirm it is a live line.
+2. **`$30bn+` and `15+ years`** — both are load-bearing claims, set in the
+   display face. Check each against what can be evidenced.
+3. **Form endpoint** — the contact form stays in preview mode until set. It
+   never shows a success message for a message that did not send.
+
+**Resolved:** the street address is now the city alone — *Melbourne,
+Australia*, with "working nationally" beneath it. Deliberate for a practice
+that works on its clients' sites.
+
+**Deferred by decision:** ABN and PI cover. They belong on the footer's bottom
+line and the comment there marks the spot. Until they are added, a prime cannot
+onboard the practice as a subcontractor from the website alone, and a
+procurement officer has to ask for the ABN — see §7.
 
 ---
 
@@ -330,6 +339,7 @@ the reasoning survives:
 | **Panel / prequalification position** | Off the page | Government is buyer #1 and panels are how government buys advice. No route is now described. |
 | **"How we're engaged" block** | Not built | The four-audience fix segments by capability only, not by transaction shape. Partly mitigated by one enquiry type. |
 | **Capability statement (1-page PDF)** | Not built | The artefact that gets forwarded internally and attached to tenders. Worth doing next. |
+| **ABN and PI cover** | Deferred | Procurement enablers. Until they are on the page a prime cannot onboard from the site alone, and a procurement officer has to ask. |
 
 ---
 

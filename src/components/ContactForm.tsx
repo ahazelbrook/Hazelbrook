@@ -138,13 +138,14 @@ export function ContactForm() {
               </VStack>
 
               <VStack gap={2}>
-                <p className="hb-label">{contact.city}</p>
+                <p className="hb-label">Based</p>
                 <VStack gap={0}>
-                  {contact.address.map(line => (
-                    <Text key={line} type="body" as="p" color="secondary">
-                      {line}
-                    </Text>
-                  ))}
+                  <Text type="body" as="p" color="secondary">
+                    {contact.location}
+                  </Text>
+                  <Text type="body" as="p" color="secondary">
+                    {contact.reach}
+                  </Text>
                 </VStack>
               </VStack>
             </VStack>

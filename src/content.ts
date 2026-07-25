@@ -40,37 +40,24 @@ export const firm = {
 } as const;
 
 /**
- * Contact details as they appear on the printed stationery.
+ * Contact details.
  *
- * NOTE — three values below are placeholders and must be replaced before the
- * site goes public. They are listed in `docs/copy-plan.md` §6, and none of them
- * can be guessed: the street address, the ABN, and the professional indemnity
- * cover. The telephone number is carried over from the existing site; confirm
- * it is a live line.
+ * The practice shows the city rather than a street address — deliberate for a
+ * practice that works on its clients' sites, and it keeps the footer honest
+ * about where the work is done rather than where the desk is.
+ *
+ * `reach` exists because a Melbourne line on its own reads as historical
+ * against a track record that is largely Sydney and Brisbane.
+ *
+ * NOTE — the telephone number is carried over from the existing site. Confirm
+ * it is a live line before launch.
  */
 export const contact = {
   email: 'hello@hazelbrook.co',
   telephone: '+61 426 364 426',
-  city: 'Melbourne',
-  /** REPLACE — the practice's Melbourne address, or drop to the city alone. */
-  address: ['REPLACE — street address', 'Melbourne VIC 3000'],
+  location: 'Melbourne, Australia',
   reach: 'Working nationally',
 } as const;
-
-/**
- * Procurement enablers, not legal footnotes.
- *
- * A prime cannot onboard a subcontractor without current PI certificates, and a
- * procurement officer cannot progress an engagement without an ABN. Putting
- * them on the page removes friction at the moment a buyer is actually moving.
- *
- * REPLACE both values below — an invented ABN or an overstated sum insured is
- * a real problem, not a typo.
- */
-export const practiceDetails = [
-  { label: 'ABN', value: 'REPLACE — ABN' },
-  { label: 'Insurance', value: 'REPLACE — professional indemnity and public liability cover' },
-] as const;
 
 // -----------------------------------------------------------------------------
 // THE PAGE

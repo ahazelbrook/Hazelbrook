@@ -27,16 +27,21 @@ Until that is a real URL the form runs in **preview mode**: it validates, and it
 tells the visitor plainly that nothing was sent. It never shows a success
 message for a message that did not go anywhere.
 
-**2 · Replace the placeholders in the practice details.**
+**2 · Confirm the claims and the phone number.**
 
-Three values are marked `REPLACE` in `src/content.ts` and render on the page as
-written, so they are impossible to miss: the Melbourne street address, the ABN,
-and the professional indemnity cover. None of them can be guessed — an invented
-ABN or an overstated sum insured is a real problem, not a typo. Confirm the
-telephone number is a live line while you are there.
+Nothing on the page is a placeholder, so the site can ship as it stands. Three
+things still want checking:
 
-Two claims are also load-bearing on the page and should be checked against what
-you can evidence: **$30bn+ of projects worked on** and **15+ years**.
+- **`+61 426 364 426`** is carried over from the previous site — confirm it is
+  a live line.
+- **`$30bn+` of projects worked on** and **15+ years** are load-bearing claims,
+  set in the display face. Check each against what you can evidence.
+
+**ABN and professional indemnity cover are deferred, not forgotten.** They
+belong on the footer's bottom line — the comment in `SiteFooter.tsx` marks the
+spot. Until they are there, a prime cannot onboard the practice as a
+subcontractor from the website alone, and a procurement officer has to ask for
+the ABN.
 
 ## Running it
 
