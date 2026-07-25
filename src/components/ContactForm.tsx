@@ -111,7 +111,10 @@ export function ContactForm() {
   return (
     <section className="hb-section" id="contact">
       <div className="hb-container">
-        <Grid columns={{ minWidth: 380 }} gap={8} align="start" width="100%">
+        {/* minWidth stays under ~340 so a single column still fits inside the
+            container's content box on a 390px phone — a larger minimum forces
+            the column wider than the viewport and pushes the page sideways. */}
+        <Grid columns={{ minWidth: 320 }} gap={8} align="start" width="100%">
           {/* Left — the invitation and the direct details. */}
           <VStack gap={6}>
             <VStack gap={5}>

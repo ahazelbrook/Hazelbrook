@@ -1,6 +1,7 @@
 import { SiteHeader } from './components/SiteHeader';
 import { Hero } from './components/Hero';
 import { Mission } from './components/Mission';
+import { Projects } from './components/Projects';
 import { Services } from './components/Services';
 import { ContactForm } from './components/ContactForm';
 import { SiteFooter } from './components/SiteFooter';
@@ -15,6 +16,7 @@ export default function App() {
       <main>
         <Hero />
         <Mission />
+        <Projects />
         <Services />
         <ContactForm />
       </main>

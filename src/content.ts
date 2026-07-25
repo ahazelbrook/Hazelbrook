@@ -44,7 +44,7 @@ export const firm = {
  */
 export const contact = {
   email: 'hello@hazelbrook.co',
-  telephone: '+44 20 7946 0102',
+  telephone: '+61 426 364 426',
   address: ['18 Ridgmount Street', 'London WC1E 7AH'],
   offices: ['London', 'Sydney'],
   registration: 'Registered in England no. OC148213',
@@ -73,9 +73,80 @@ export const mission = {
   figures: [
     { value: '1974', caption: 'Independent since' },
     { value: '2', caption: 'Offices — London & Sydney' },
-    { value: '£40bn+', caption: 'Capital advised to close' },
   ],
 } as const;
+
+/**
+ * Track record — the carousel.
+ *
+ * Each card is a colour field from the brand spectrum with ink type on top,
+ * which is the brand pack's own `.hb-field`: "A statement field — the one time
+ * colour fills a page." The accents are assigned by sector the way the deck
+ * defines them — Vapor for grid and engineering, Glow for generation, Dusk for
+ * policy and the long view, Tide for transition and renewables.
+ *
+ * The overviews below describe the projects themselves, drawn from public
+ * reporting. They are deliberately not claims about the firm's specific
+ * mandate, scope or fee on any one of them — that detail is yours to add, and
+ * should be checked against what you can actually say publicly.
+ */
+export const trackRecord = {
+  label: 'Track record',
+  heading: 'Worked on over $30bn of infrastructure projects',
+  standfirst:
+    'Roads, heavy rail, motorway concessions and renewables — on both sides of the table, from business case to financial close.',
+} as const;
+
+export const projects = [
+  {
+    accent: 'ember',
+    sector: 'Transaction · Sydney',
+    figure: '$9.26bn',
+    title: 'Sydney Motorway Corporation sale',
+    description:
+      'The NSW Government sold 51% of Sydney Motorway Corporation to Sydney Transport Partners — Transurban alongside AustralianSuper, CPP Investments and the Abu Dhabi Investment Authority. The proceeds paid for the M4–M5 Link, the piece that turned WestConnex from two motorways into a network.',
+  },
+  {
+    accent: 'vapor',
+    sector: 'Heavy rail · Brisbane',
+    figure: '10.2 km',
+    title: 'Cross River Rail',
+    description:
+      'Twin tunnels beneath the Brisbane River and the CBD, with four new underground stations at Boggo Road, Woolloongabba, Albert Street and Roma Street. Delivered as a PPP, and a study in how a business case moves: costed at $5.4bn, now reported near $19bn, with services from 2029.',
+  },
+  {
+    accent: 'dusk',
+    sector: 'Motorway · Melbourne',
+    figure: '$10bn+',
+    title: 'West Gate Tunnel',
+    description:
+      'A second crossing for Melbourne’s west, linking the West Gate Freeway to the Port of Melbourne and CityLink. It opened in December 2025 at roughly double its original estimate — most of the overrun bought and paid for in a long dispute over where contaminated spoil could go.',
+  },
+  {
+    accent: 'glow',
+    sector: 'Metro rail · Sydney',
+    figure: 'Driverless',
+    title: 'Sydney Metro',
+    description:
+      'Australia’s largest public transport programme: fully automated, high-frequency, and now extending 23 kilometres to Western Sydney Airport. Metro resets what land near a station is worth, which is the part of the case a conventional transport appraisal tends to miss.',
+  },
+  {
+    accent: 'tide',
+    sector: 'Motorway · Melbourne',
+    figure: '$11.1bn',
+    title: 'North East Link',
+    description:
+      'Victoria’s longest road tunnel, and the largest road PPP ever let in Australia — a four-party partnership on an incentivised target cost, with risk and reward shared rather than simply transferred to the builder. A deliberate answer to how the last generation of contracts ended.',
+  },
+  {
+    accent: 'ember',
+    sector: 'Renewables · Australia',
+    figure: 'Multiple',
+    title: 'Renewable energy M&A and financial close',
+    description:
+      'Buy-side and sell-side across wind, solar and storage — diligence, commercial structuring and the long grind to close. The technical case is usually settled early. The financing case is what decides whether the thing actually gets built.',
+  },
+] as const;
 
 /**
  * The four practice areas, each carrying its accent from the brand spectrum.

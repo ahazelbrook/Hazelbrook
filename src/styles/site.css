@@ -161,6 +161,141 @@
   }
 
   /* ---------------------------------------------------------------------------
+     Track record — the carousel
+
+     Cards are colour fields: the brand's one sanctioned use of a page-filling
+     accent, always with ink type on top. The track breaks the container so the
+     neighbouring cards peek in at both edges, which is what tells the visitor
+     there is more to scroll without needing an arrow to say so.
+  ----------------------------------------------------------------------------*/
+  .hb-section--record {
+    padding-block: clamp(64px, 9vw, 128px);
+    overflow: hidden;
+  }
+
+  .hb-record__track {
+    margin-block: var(--hb-space-7, 48px) var(--hb-space-5, 24px);
+  }
+
+  /* Lead-in matches the container's own left edge, so the first card starts on
+     the same line as the heading above it. The reference centres its cards
+     because its heading is centred; this page is left-aligned throughout, and
+     a centred first card reads as a mistake next to a flush-left standfirst.
+     Trailing space lets the last card still reach the snap point. */
+  .hb-cards {
+    display: flex;
+    gap: var(--hb-space-5, 24px);
+    list-style: none;
+    margin: 0;
+    padding-inline: max(var(--hb-space-5, 24px), calc((100vw - 1180px) / 2 + var(--hb-space-5, 24px)))
+      max(var(--hb-space-5, 24px), calc(100vw - 560px));
+    padding-block: 0;
+  }
+
+  .hb-card-field {
+    flex: 0 0 auto;
+    width: min(520px, 82vw);
+    display: flex;
+    flex-direction: column;
+    gap: var(--hb-space-4, 16px);
+    padding: var(--hb-space-7, 48px);
+    background: var(--hb-accent);
+    color: var(--hb-ink);
+    scroll-snap-align: start;
+    /* Colour is a guest: unfocused cards sit back until they are centred. */
+    opacity: 0.55;
+    transition: opacity 240ms ease;
+  }
+
+  .hb-card-field[aria-current='true'] {
+    opacity: 1;
+  }
+
+  .hb-card-field__sector {
+    color: rgba(23, 24, 26, 0.62);
+  }
+
+  .hb-card-field__title {
+    text-wrap: balance;
+  }
+
+  /* The figure carries the middle of the card, where the reference puts an
+     illustration. Young Serif, because the deck is explicit that numbers set in
+     the display face "read as considered, not generated". */
+  .hb-card-field__figure {
+    font-size: 3.25rem;
+    margin-block: var(--hb-space-3, 12px);
+    padding-top: var(--hb-space-4, 16px);
+    border-top: 1px solid rgba(23, 24, 26, 0.22);
+  }
+
+  .hb-card-field p:last-child {
+    color: rgba(23, 24, 26, 0.78);
+  }
+
+  @media (max-width: 700px) {
+    .hb-cards {
+      padding-inline: var(--hb-space-5, 24px);
+    }
+
+    .hb-card-field {
+      width: min(420px, 86vw);
+      padding: var(--hb-space-6, 32px);
+    }
+
+    .hb-card-field__figure {
+      font-size: 2.5rem;
+    }
+  }
+
+  /* — The dot rail ————————————————————————————————————————————————
+     Dots joined by a hairline, the current one filled. */
+  .hb-rail {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0;
+  }
+
+  .hb-rail__dot {
+    appearance: none;
+    background: transparent;
+    border: 0;
+    padding: var(--hb-space-3, 12px) 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+
+  /* The dot itself. */
+  .hb-rail__dot::after {
+    content: '';
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    border: 1px solid var(--hb-ink);
+    background: transparent;
+    transition: background 160ms ease;
+  }
+
+  .hb-rail__dot[aria-selected='true']::after {
+    background: var(--hb-ink);
+  }
+
+  /* The hairline joining one dot to the next. */
+  .hb-rail__dot + .hb-rail__dot::before {
+    content: '';
+    width: 26px;
+    height: 1px;
+    background: var(--hb-rule-strong);
+  }
+
+  .hb-rail__dot:focus-visible {
+    outline: 2px solid var(--hb-accent-deep);
+    outline-offset: 2px;
+  }
+
+  /* ---------------------------------------------------------------------------
      Reversed footer
      The brand's .hb-panel--ink handles ground and display type; these are the
      pieces that only appear on a reversed ground.
