@@ -1,0 +1,28 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "hazelbrook",
+  "compatibility_date": "2026-07-28",
+
+  // This project is a static site — there is no server-side code. Cloudflare
+  // serves the built files in dist/ directly from its edge network.
+  "assets": {
+    "directory": "./dist",
+    // The site is a single-page app: any URL that isn't a real file should
+    // return index.html and let the app route it, rather than 404.
+    "not_found_handling": "single-page-application"
+  },
+
+  // Both of these are OFF on purpose, and they are the security-critical part
+  // of this file. See DEPLOY.md §5.
+  //
+  // Cloudflare gives every Worker a free public address of its own
+  // (<name>.<subdomain>.workers.dev), and a second one for every preview
+  // build. Those addresses serve this identical site, they sit outside your
+  // domain, and a Cloudflare Access policy on your domain CANNOT cover them.
+  // Leaving them on is an unlocked side door with no login on it.
+  //
+  // Turning them off here means the site is reachable at your custom domain
+  // and nowhere else. Do not set either to true.
+  "workers_dev": false,
+  "preview_urls": false
+}

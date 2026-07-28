@@ -56,10 +56,15 @@ npm run lint
 `dist/` is a static bundle — it deploys to Netlify, Vercel, Cloudflare Pages, S3
 or any static host with no server-side component.
 
-To put the site behind a login while it is still in draft, see
-[`docs/cloudflare-zero-trust.md`](docs/cloudflare-zero-trust.md) — how to set up
-a Cloudflare Access application, how to prove it is actually enforcing, and why
-a 525 is a separate problem from an unprotected site.
+**To host it privately: [`DEPLOY.md`](DEPLOY.md).** Step-by-step, no coding —
+hosts the site on Cloudflare from this repository and puts it behind a login so
+only named email addresses can reach it. `wrangler.jsonc` in the root is the
+deployment config; the two `false` settings in it are what keep the site off
+Cloudflare's public `workers.dev` addresses, and should stay that way.
+
+[`docs/cloudflare-zero-trust.md`](docs/cloudflare-zero-trust.md) is the
+technical reference behind it — how Access enforcement actually works, why it
+fails silently, and why a 525 is a separate problem from an unprotected site.
 
 ## How the brand is wired
 
