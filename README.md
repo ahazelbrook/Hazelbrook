@@ -56,6 +56,11 @@ npm run lint
 `dist/` is a static bundle — it deploys to Netlify, Vercel, Cloudflare Pages, S3
 or any static host with no server-side component.
 
+To put the site behind a login while it is still in draft, see
+[`docs/cloudflare-zero-trust.md`](docs/cloudflare-zero-trust.md) — how to set up
+a Cloudflare Access application, how to prove it is actually enforcing, and why
+a 525 is a separate problem from an unprotected site.
+
 ## How the brand is wired
 
 The brand ships as two files, both from the Hazelbrook brand pack. They are used
